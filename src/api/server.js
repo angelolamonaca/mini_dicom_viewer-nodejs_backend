@@ -21,7 +21,9 @@ const apolloServer = new ApolloServer({
     },
 });
 
-apolloServer.applyMiddleware({ app, path: '/api' });
+apolloServer.start().then(() => {
+    apolloServer.applyMiddleware({ app, path: '/api' });
+})
 
 const server = createServer(app);
 
