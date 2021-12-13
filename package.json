@@ -19,6 +19,7 @@
   "homepage": "https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "graphql": "^16.1.0"
+    "graphql": "^16.1.0",
+    "sequelize": "^6.12.0-beta.3"
   }
 }
