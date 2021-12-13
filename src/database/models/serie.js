@@ -4,7 +4,6 @@ module.exports = (sequelize, DataTypes) => {
         {
             idPatient: DataTypes.INTEGER,
             idStudy: DataTypes.INTEGER,
-            idSeries: DataTypes.INTEGER,
             idModality: DataTypes.INTEGER,
             seriesName: DataTypes.STRING,
         },
@@ -19,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         Series.belongsTo(models.Patient, { foreignKey: 'idPatient', as: 'patient' });
         Series.belongsTo(models.Patient, { foreignKey: 'idStudy', as: 'study' });
         Series.belongsTo(models.Patient, { foreignKey: 'idModality', as: 'modality' });
-        Series.hasMany(models.File, { foreignKey: 'idSeries', as: 'files' });
+        Series.hasMany(models.File, { foreignKey: 'id', as: 'files' });
     };
     return Series;
 };

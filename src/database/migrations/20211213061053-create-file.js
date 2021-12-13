@@ -1,8 +1,8 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('files', {
-      idFile: {
+    await queryInterface.createTable('Files', {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -12,27 +12,27 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'series',
+            tableName: 'Series',
           },
-          key: 'idSeries',
+          key: 'id',
         },
       },
       idStudy: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'studies',
+            tableName: 'Studies',
           },
-          key: 'idStudy',
+          key: 'id',
         },
       },
       idPatient: {
         type: Sequelize.INTEGER,
         references: {
           model: {
-            tableName: 'patients',
+            tableName: 'Patients',
           },
-          key: 'idPatient',
+          key: 'id',
         },
       },
       filePath: {
@@ -49,6 +49,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('files');
+    await queryInterface.dropTable('Files');
   }
 };

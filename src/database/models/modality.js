@@ -2,7 +2,6 @@ module.exports = (sequelize, DataTypes) => {
   const Modality = sequelize.define(
       'Modality',
       {
-        idModality: DataTypes.INTEGER,
         name: DataTypes.STRING,
       },
       {
@@ -13,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Modality.associate = function (models) {
     // associations can be defined here
-    Modality.hasMany(models.Series, { foreignKey: 'idModality', as: 'series' });
+    Modality.hasMany(models.Series, { foreignKey: 'id', as: 'series' });
   };
   return Modality;
 };

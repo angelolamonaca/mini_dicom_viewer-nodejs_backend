@@ -1,1 +1,2 @@
-module.exports = [];
+const patientResolver = require('./patient');
+module.exports = [patientResolver];

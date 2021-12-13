@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
       'Study',
       {
         idPatient: DataTypes.INTEGER,
-        idStudy: DataTypes.INTEGER,
         studyName: DataTypes.STRING,
       },
       {
@@ -15,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   Study.associate = function (models) {
     // associations can be defined here
     Study.belongsTo(models.Patient, { foreignKey: 'idPatient', as: 'patient' });
-    Study.hasMany(models.Series, { foreignKey: 'idStudy', as: 'series' });
-    Study.hasMany(models.File, { foreignKey: 'idStudy', as: 'files' });
+    Study.hasMany(models.Series, { foreignKey: 'id', as: 'series' });
+    Study.hasMany(models.File, { foreignKey: 'id', as: 'files' });
   };
   return Study;
 };
