@@ -1,0 +1,20 @@
+{
+  "name": "mini_dicom_viewer-nodejs_backend",
+  "version": "1.0.0",
+  "description": "API with GraphQL, Node.js, and Sequelize for Mini DICOM Viewer Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend/issues"
+  },
+  "homepage": "https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend#readme"
+}
