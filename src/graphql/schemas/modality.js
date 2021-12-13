@@ -3,7 +3,7 @@ const {gql} = require('apollo-server-express');
 module.exports = gql`
 
  type Modality {
-     idModality: Int!
+     id: Int!
      name: String!
      createdAt: String
      updatedAt: String
@@ -11,7 +11,7 @@ module.exports = gql`
 
 extend type Query {
     getAllModalities: [Modality!]
-    getSingleModality(idModality: Int!): Modality
+    getSingleModality(id: Int!): Modality
 }
 
  extend type Mutation {
@@ -19,7 +19,7 @@ extend type Query {
  }
 
  type CreateModalityResponse {
-    idModality: Int!
+    id: Int!
     name: String!
     createdAt: String!
  }

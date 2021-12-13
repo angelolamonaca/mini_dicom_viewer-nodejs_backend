@@ -3,9 +3,9 @@ const {gql} = require('apollo-server-express');
 module.exports = gql`
 
  type Study {
-     idStudy: Int!
+     id: Int!
      studyName: String!
-     patient: Patient!
+     idPatient: Int!
      series: [Series!]
      files: [File!]
      createdAt: String
@@ -14,15 +14,15 @@ module.exports = gql`
 
 extend type Query {
     getAllStudies: [Study!]
-    getSingleStudy(idStudy: Int!): Study
+    getSingleStudy(id: Int!): Study
 }
 
  extend type Mutation {
-     createStudy(studyName: String!): CreateStudyResponse
+     createStudy(studyName: String!, idPatient: Int!): CreateStudyResponse
  }
 
  type CreateStudyResponse {
-    idStudy: Int!
+    id: Int!
     studyName: String!
     createdAt: String!
  }

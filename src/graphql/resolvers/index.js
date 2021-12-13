@@ -1,2 +1,3 @@
 const patientResolver = require('./patient');
-module.exports = [patientResolver];
+const studyResolver = require('./study');
+module.exports = [patientResolver, studyResolver];

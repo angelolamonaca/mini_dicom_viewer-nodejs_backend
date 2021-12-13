@@ -8,4 +8,25 @@ module.exports = {
             });
         },
     },
+
+    Query: {
+        async getAllPatients(root, args, context) {
+            return Patient.findAll();
+        },
+        async getSinglePatient(_, { patientId }, context) {
+            return Patient.findByPk(patientId);
+        },
+    },
+
+    Patient: {
+        studies(patient) {
+            return patient.getStudies();
+        },
+        series(patient) {
+            return patient.getSeries();
+        },
+        files(patient) {
+            return patient.getFiles();
+        },
+    },
 };

@@ -3,7 +3,7 @@ const {gql} = require('apollo-server-express');
 module.exports = gql`
 
  type File {
-     idFile: Int!
+     id: Int!
      filePath: String!
      patient: Patient!
      study: Study!
@@ -14,7 +14,7 @@ module.exports = gql`
 
 extend type Query {
     getAllFiles: [File!]
-    getSingleFile(idFile: Int!): File
+    getSingleFile(id: Int!): File
 }
 
  extend type Mutation {
@@ -22,7 +22,7 @@ extend type Query {
  }
 
  type CreateFileResponse {
-    idFile: Int!
+    id: Int!
     filePath: String!
     createdAt: String!
  }
