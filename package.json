@@ -12,12 +12,17 @@
     "type": "git",
     "url": "git+https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend.git"
   },
-  "keywords": [],
   "author": {
     "name": "Angelo",
     "url": "www.angelolamonaca.com"
   },
-  "license": "ISC",
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend/issues"
   },
