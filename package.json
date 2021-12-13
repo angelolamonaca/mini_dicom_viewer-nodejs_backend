@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend/issues"
   },
-  "homepage": "https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend#readme"
+  "homepage": "https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
