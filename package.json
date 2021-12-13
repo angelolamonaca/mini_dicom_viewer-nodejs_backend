@@ -4,6 +4,8 @@
   "description": "API with GraphQL, Node.js, and Sequelize for Mini DICOM Viewer Project",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +25,9 @@
     "sequelize": "^6.12.0-beta.3"
   },
   "devDependencies": {
+    "apollo-server-express": "^3.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "nodemon": "^2.0.15"
   }
 }
