@@ -6,7 +6,7 @@ module.exports = {
     password: 'angelo_lamonaca',
     database: 'dicom-viewer',
     host: '127.0.0.1',
+    port: '3308',
     dialect: 'mysql',
-    use_env_variable: 'jdbc:mysql://localhost:3308/dicom-viewer',
   },
 };
