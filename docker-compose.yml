@@ -2,7 +2,27 @@ version: "3.9"
 
 services:
 
+  database:
+    image: mysql:8.0.27
+    environment:
+      MYSQL_ROOT_PASSWORD: angelo_lamonaca
+      MYSQL_DATABASE: dicom-viewer
+    ports:
+      - "3306:3306"
+    networks:
+      - app-connect
+
   backend:
     build: .
     ports:
       - "3301:3301"
+    depends_on:
+      - database
+    command: bash -c "./wait-for-it.sh database:3306 && npx sequelize-cli db:migrate && node src/index.js"
+    networks:
+      - app-connect
+
+
+networks:
+  app-connect:
+    driver: bridge
