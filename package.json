@@ -13,7 +13,10 @@
     "url": "git+https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Angelo",
+    "url": "www.angelolamonaca.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/angelolamonaca/mini_dicom_viewer-nodejs_backend/issues"
