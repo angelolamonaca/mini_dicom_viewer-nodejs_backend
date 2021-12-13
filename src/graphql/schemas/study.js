@@ -24,6 +24,7 @@ extend type Query {
  type CreateStudyResponse {
     id: Int!
     studyName: String!
+    idPatient: Int!
     createdAt: String!
  }
 

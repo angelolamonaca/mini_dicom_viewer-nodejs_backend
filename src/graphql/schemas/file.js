@@ -14,7 +14,7 @@ module.exports = gql`
 
 extend type Query {
     getAllFiles: [File!]
-    getSingleFile(id: Int!): File
+    getSingleFile(id: Int!, idPatient: Int!, idStudy: Int!, idSeries: Int!): File
 }
 
  extend type Mutation {

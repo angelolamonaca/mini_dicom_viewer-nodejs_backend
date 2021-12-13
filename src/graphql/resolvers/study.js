@@ -1,8 +1,8 @@
-const { Study } = require('../../database/models');
+const {Study} = require('../../database/models');
 
 module.exports = {
     Mutation: {
-        async createStudy(_, { studyName , idPatient}) {
+        async createStudy(_, {studyName, idPatient}) {
             return Study.create({
                 studyName,
                 idPatient
@@ -14,17 +14,17 @@ module.exports = {
         async getAllStudies(root, args, context) {
             return Study.findAll();
         },
-        async getSingleStudy(_, { studyId }, context) {
-            return Study.findByPk(studyId);
+        async getSingleStudy(_, {id}, context) {
+            return Study.findByPk(id);
         },
     },
 
     Study: {
-        series(Study) {
-            return Study.getSeries();
+        series(study) {
+            return study.getSeries();
         },
-        files(Study) {
-            return Study.getFiles();
+        files(study) {
+            return study.getFiles();
         },
     },
 };

@@ -5,9 +5,9 @@ module.exports = gql`
  type Series {
      id: Int!
      seriesName: String!
-     patient: Patient!
-     study: Study!
-     modality: Modality!
+     idPatient: Int!
+     idStudy: Int!
+     idModality: Int!
      files: [File!]
      createdAt: String
      updatedAt: String
@@ -19,12 +19,15 @@ extend type Query {
 }
 
  extend type Mutation {
-     createSeries(seriesName: String!): CreateSeriesResponse
+     createSeries(seriesName: String!, idPatient: Int!, idStudy: Int!, idModality: Int!): CreateSeriesResponse
  }
 
  type CreateSeriesResponse {
     id: Int!
     seriesName: String!
+    idPatient: Int!
+    idStudy: Int!
+    idModality: Int!
     createdAt: String!
  }
 

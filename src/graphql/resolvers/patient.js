@@ -13,8 +13,8 @@ module.exports = {
         async getAllPatients(root, args, context) {
             return Patient.findAll();
         },
-        async getSinglePatient(_, { patientId }, context) {
-            return Patient.findByPk(patientId);
+        async getSinglePatient(_, { id }, context) {
+            return Patient.findByPk(id);
         },
     },
 

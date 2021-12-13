@@ -5,6 +5,7 @@ module.exports = gql`
  type Modality {
      id: Int!
      name: String!
+     series: [Series!]
      createdAt: String
      updatedAt: String
  }
