@@ -5,9 +5,9 @@ module.exports = gql`
  type File {
      id: Int!
      filePath: String!
-     patient: Patient!
-     study: Study!
-     series: Series!
+     idPatient: Int!
+     idStudy: Int!
+     idSeries: Int!
      createdAt: String
      updatedAt: String
  }
@@ -18,12 +18,15 @@ extend type Query {
 }
 
  extend type Mutation {
-     createFile(filePath: String!): CreateFileResponse
+     createFile(filePath: String!, idPatient: Int!, idStudy: Int!, idSeries: Int!): CreateFileResponse
  }
 
  type CreateFileResponse {
     id: Int!
     filePath: String!
+    idPatient: Int!
+    idStudy: Int!
+    idSeries: Int!
     createdAt: String!
  }
 
