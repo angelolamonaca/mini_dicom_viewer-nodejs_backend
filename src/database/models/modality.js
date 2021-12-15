@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Modality.associate = function (models) {
     // associations can be defined here
-    Modality.hasMany(models.Series, { foreignKey: 'id', as: 'series' });
+    Modality.hasMany(models.Series, { foreignKey: 'idModality', as: 'series' });
   };
   return Modality;
 };
