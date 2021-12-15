@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
         idPatient: DataTypes.INTEGER,
         idStudy: DataTypes.INTEGER,
         idSeries: DataTypes.INTEGER,
-        seriesName: DataTypes.STRING,
         filePath: DataTypes.STRING,
       },
       {
