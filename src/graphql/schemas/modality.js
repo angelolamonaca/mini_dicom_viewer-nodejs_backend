@@ -17,6 +17,7 @@ extend type Query {
 
  extend type Mutation {
      createModality(name: String!): CreateModalityResponse
+     deleteModality(id: Int!): Int
  }
 
  type CreateModalityResponse {

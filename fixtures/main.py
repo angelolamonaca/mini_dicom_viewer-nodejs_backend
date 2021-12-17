@@ -3,7 +3,7 @@ from graphqlclient import GraphQLClient
 import pymysql
 from random import randrange
 
-client = GraphQLClient('http://localhost:3302/api')
+client = GraphQLClient('http://172.17.0.1:3301/api')
 
 
 def create_patient(name):
@@ -982,7 +982,7 @@ create_file("./documents/dicom/images/fake.dcm", 14, 30, 114)
 
 # Create a connection object to the MySQL Database Server
 
-ipOfHost = "localhost"
+ipOfHost = "172.17.0.1"
 
 dbUser = "root"
 

@@ -13,10 +13,10 @@ module.exports = {
                 {where: {id: id}}
             )
         },
-        async deletePatient(_, {name}) {
-            return await Patient.delete({
-                name
-            });
+        async deletePatient(_, {id}) {
+            return await Patient.destroy(
+            {where: {id: id}}
+            )
         },
     },
 

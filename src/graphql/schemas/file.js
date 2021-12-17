@@ -20,6 +20,7 @@ extend type Query {
  extend type Mutation {
      createFile(filePath: String!, idPatient: Int!, idStudy: Int!, idSeries: Int!): CreateFileResponse
      editFile(id: Int!, filePath: String!): [Int]
+     deleteFile(id: Int!): Int
  }
 
  type CreateFileResponse {

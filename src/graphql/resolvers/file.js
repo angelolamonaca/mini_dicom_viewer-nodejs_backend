@@ -16,6 +16,11 @@ module.exports = {
                 {where: {id: id}}
             )
         },
+        async deleteFile(_, {id}) {
+            return await File.destroy(
+                {where: {id: id}}
+            )
+        },
     },
 
     Query: {

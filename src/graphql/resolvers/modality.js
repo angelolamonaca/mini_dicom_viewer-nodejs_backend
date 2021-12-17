@@ -1,4 +1,4 @@
-const { Modality } = require('../../database/models');
+const { Modality, Series} = require('../../database/models');
 
 module.exports = {
     Mutation: {
@@ -6,6 +6,11 @@ module.exports = {
             return Modality.create({
                 name
             });
+        },
+        async deleteModality(_, {id}) {
+            return await Modality.destroy(
+                {where: {id: id}}
+            )
         },
     },
 

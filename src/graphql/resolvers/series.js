@@ -22,6 +22,11 @@ module.exports = {
                 {where: {id: id}}
             )
         },
+        async deleteSeries(_, {id}) {
+            return await Series.destroy(
+                {where: {id: id}}
+            )
+        },
     },
 
     Query: {
