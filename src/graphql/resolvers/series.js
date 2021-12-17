@@ -16,6 +16,12 @@ module.exports = {
                 {where: {id: id}}
             )
         },
+        async editSeriesModality(_, {id, idModality}) {
+            return await Series.update(
+                {idModality: idModality},
+                {where: {id: id}}
+            )
+        },
     },
 
     Query: {
