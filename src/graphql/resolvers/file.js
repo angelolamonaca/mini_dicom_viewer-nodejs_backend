@@ -1,14 +1,20 @@
-const {File} = require('../../database/models');
+const {File, Series} = require('../../database/models');
 
 module.exports = {
     Mutation: {
         async createFile(_, {filePath, idPatient, idStudy, idSeries}) {
-            return File.create({
+            return await File.create({
                 filePath,
                 idPatient,
                 idStudy,
                 idSeries
             });
+        },
+        async editFile(_, {id, filePath}) {
+            return await File.update(
+                {filePath: filePath},
+                {where: {id: id}}
+            )
         },
     },
 
