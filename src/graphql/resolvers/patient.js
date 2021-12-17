@@ -1,9 +1,20 @@
-const { Patient } = require('../../database/models');
+const {Patient} = require('../../database/models');
 
 module.exports = {
     Mutation: {
-        async createPatient(_, { name }) {
-            return Patient.create({
+        async createPatient(_, {name}) {
+            return await Patient.create({
+                name
+            });
+        },
+        async editPatient(_, {id, name}) {
+            return await Patient.update(
+                {name: name},
+                {where: {id: id}}
+            )
+        },
+        async deletePatient(_, {name}) {
+            return await Patient.create({
                 name
             });
         },
@@ -13,7 +24,7 @@ module.exports = {
         async getAllPatients(root, args, context) {
             return Patient.findAll();
         },
-        async getSinglePatient(_, { id }, context) {
+        async getSinglePatient(_, {id}, context) {
             return Patient.findByPk(id);
         },
     },

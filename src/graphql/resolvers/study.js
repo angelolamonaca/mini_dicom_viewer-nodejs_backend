@@ -1,12 +1,18 @@
-const {Study} = require('../../database/models');
+const {Study, Patient} = require('../../database/models');
 
 module.exports = {
     Mutation: {
         async createStudy(_, {studyName, idPatient}) {
-            return Study.create({
+            return await Study.create({
                 studyName,
                 idPatient
             });
+        },
+        async editStudy(_, {id, studyName}) {
+            return await Study.update(
+                {studyName: studyName},
+                {where: {id: id}}
+            )
         },
     },
 

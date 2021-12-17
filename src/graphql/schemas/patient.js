@@ -19,6 +19,8 @@ extend type Query {
 
  extend type Mutation {
      createPatient(name: String!): CreatePatientResponse
+     editPatient(id: Int!, studyName: String!): [Int]
+     deletePatient(id: Int!): CreatePatientResponse
  }
 
  type CreatePatientResponse {
