@@ -1,14 +1,20 @@
-const {Series} = require('../../database/models');
+const {Series, Study} = require('../../database/models');
 
 module.exports = {
     Mutation: {
         async createSeries(_, {seriesName, idPatient, idStudy, idModality}) {
-            return Series.create({
+            return await Series.create({
                 seriesName,
                 idPatient,
                 idStudy,
                 idModality
             });
+        },
+        async editSeries(_, {id, seriesName}) {
+            return await Series.update(
+                {seriesName: seriesName},
+                {where: {id: id}}
+            )
         },
     },
 
