@@ -973,3 +973,84 @@ create_file("./documents/dicom/images/fake.dcm",14,30,114)
 create_file("./documents/dicom/images/fake.dcm",14,30,114)
 create_file("./documents/dicom/images/fake.dcm",14,30,114)
 create_file("./documents/dicom/images/fake.dcm",14,30,114)
+
+# import the python mysql client
+
+import pymysql
+from random import randrange
+
+# Create a connection object to the MySQL Database Server
+
+ipOfHost = "172.17.0.1"
+
+dbUser = "root"
+
+dbUserPassword = "angelo_lamonaca"
+
+dbName = "dicom-viewer"
+
+dbCharset = "utf8mb4"
+
+cursorType = pymysql.cursors.DictCursor
+
+databaseConnection = pymysql.connect(host=ipOfHost,
+
+                                     user=dbUser,
+
+                                     password=dbUserPassword,
+
+                                     db=dbName,
+
+                                     charset=dbCharset,
+
+                                     cursorclass=cursorType,
+
+                                     autocommit=True)
+
+try:
+
+    # Cursor object creation
+
+    cursorObject = databaseConnection.cursor()
+    for x in range(1, 689):
+        updateStatement = "UPDATE `dicom-viewer`.Files t SET t.createdAt = '2021-" + str(randrange(1, 11)) + "-" \
+                          + str(randrange(1, 28)) + " "+str(randrange(1, 23))+":"+str(randrange(0, 59))+":"+str(randrange(0, 59))+"' WHERE t.id = " + str(x)
+        cursorObject.execute(updateStatement)
+        updateStatement = "UPDATE `dicom-viewer`.Files t SET t.updatedAt = '2021-" + str(randrange(1, 11)) + "-" \
+                          + str(randrange(1, 28)) + " "+str(randrange(1, 23))+":"+str(randrange(0, 59))+":"+str(randrange(0, 59))+"' WHERE t.id = " + str(x)
+        cursorObject.execute(updateStatement)
+
+    for x in range(1, 14):
+        updateStatement = "UPDATE `dicom-viewer`.Patients t SET t.createdAt = '2021-" + str(randrange(1, 11)) + "-" \
+                          + str(randrange(1, 28)) + " "+str(randrange(1, 23))+":"+str(randrange(0, 59))+":"+str(randrange(0, 59))+"' WHERE t.id = " + str(x)
+        cursorObject.execute(updateStatement)
+        updateStatement = "UPDATE `dicom-viewer`.Patients t SET t.updatedAt = '2021-" + str(randrange(1, 11)) + "-" \
+                          + str(randrange(1, 28)) + " "+str(randrange(1, 23))+":"+str(randrange(0, 59))+":"+str(randrange(0, 59))+"' WHERE t.id = " + str(x)
+        cursorObject.execute(updateStatement)
+
+    for x in range(1, 30):
+        updateStatement = "UPDATE `dicom-viewer`.Studies t SET t.createdAt = '2021-" + str(randrange(1, 11)) + "-" \
+                          + str(randrange(1, 28)) + " "+str(randrange(1, 23))+":"+str(randrange(0, 59))+":"+str(randrange(0, 59))+"' WHERE t.id = " + str(x)
+        cursorObject.execute(updateStatement)
+        updateStatement = "UPDATE `dicom-viewer`.Studies t SET t.updatedAt = '2021-" + str(randrange(1, 11)) + "-" \
+                          + str(randrange(1, 28)) + " "+str(randrange(1, 23))+":"+str(randrange(0, 59))+":"+str(randrange(0, 59))+"' WHERE t.id = " + str(x)
+        cursorObject.execute(updateStatement)
+
+    for x in range(1, 114):
+        updateStatement = "UPDATE `dicom-viewer`.Series t SET t.createdAt = '2021-" + str(randrange(1, 11)) + "-" \
+                          + str(randrange(1, 28)) + " "+str(randrange(1, 23))+":"+str(randrange(0, 59))+":"+str(randrange(0, 59))+"' WHERE t.id = " + str(x)
+        cursorObject.execute(updateStatement)
+        updateStatement = "UPDATE `dicom-viewer`.Series t SET t.updatedAt = '2021-" + str(randrange(1, 11)) + "-" \
+                          + str(randrange(1, 28)) + " "+str(randrange(1, 23))+":"+str(randrange(0, 59))+":"+str(randrange(0, 59))+"' WHERE t.id = " + str(x)
+        cursorObject.execute(updateStatement)
+
+
+except Exception as e:
+
+    print("Exeception occured:{}".format(e))
+
+
+
+finally:
+
+    databaseConnection.close()
