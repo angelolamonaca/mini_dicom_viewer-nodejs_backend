@@ -14,7 +14,7 @@ module.exports = {
             )
         },
         async deletePatient(_, {name}) {
-            return await Patient.create({
+            return await Patient.delete({
                 name
             });
         },

@@ -20,6 +20,7 @@ extend type Query {
  extend type Mutation {
      createStudy(studyName: String!, idPatient: Int!): CreateStudyResponse
      editStudy(id: Int!, studyName: String!): [Int]
+     deleteStudy(id: Int!): Int
  }
 
  type CreateStudyResponse {

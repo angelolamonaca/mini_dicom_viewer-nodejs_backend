@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   Study.associate = function (models) {
     // associations can be defined here
     Study.belongsTo(models.Patient, { foreignKey: 'idPatient', as: 'patient' });
-    Study.hasMany(models.Series, { foreignKey: 'idStudy', as: 'series' });
-    Study.hasMany(models.File, { foreignKey: 'idStudy', as: 'files' });
+    Study.hasMany(models.Series, { foreignKey: 'idStudy', as: 'series', onUpdate: 'cascade', onDelete: 'cascade' });
+    Study.hasMany(models.File, { foreignKey: 'idStudy', as: 'files', onUpdate: 'cascade', onDelete: 'cascade' });
   };
   return Study;
 };

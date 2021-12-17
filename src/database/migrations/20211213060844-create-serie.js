@@ -16,6 +16,8 @@ module.exports = {
           },
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       idPatient: {
         type: Sequelize.INTEGER,
@@ -25,6 +27,8 @@ module.exports = {
           },
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       idModality: {
         type: Sequelize.INTEGER,
@@ -34,6 +38,8 @@ module.exports = {
           },
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
       seriesName: {
         type: Sequelize.STRING

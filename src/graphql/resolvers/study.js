@@ -14,6 +14,11 @@ module.exports = {
                 {where: {id: id}}
             )
         },
+        async deleteStudy(_, {id}) {
+            return await Study.destroy(
+                {where: {id: id}}
+            )
+        },
     },
 
     Query: {
